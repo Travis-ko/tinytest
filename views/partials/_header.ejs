@@ -1,4 +1,18 @@
 
 <head>
     <title> tiny app</title>
+    <body>
+    <form action="/login" method="POST" style="margin:150px;">
+
+        <% if(username === 'undefined'){ %>
+        <label for="login"> please login </label>
+        <input id="login" type="text" name="username" placeholder="username" style="width: 150px">
+        <% } else{ %>
+        <label for="login"> <%= username %> </label>
+            <form method="POST" action="/urls/logout">
+                        <button type=submit>logout</button>
+                        </form>
+        <% } %>
+    </form>
+    </body>
 </head>
